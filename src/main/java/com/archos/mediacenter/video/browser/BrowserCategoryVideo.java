@@ -34,6 +34,7 @@ import com.archos.mediaprovider.video.LoaderUtils;
 import com.archos.mediacenter.video.browser.BrowserByIndexedVideos.BrowserAllMovies;
 import com.archos.mediacenter.video.browser.BrowserByIndexedVideos.BrowserAllTvShows;
 import com.archos.mediacenter.video.browser.BrowserByIndexedVideos.BrowserAllVideos;
+import com.archos.mediacenter.video.browser.BrowserByIndexedVideos.BrowserContinueWatching;
 import com.archos.mediacenter.video.browser.BrowserByIndexedVideos.BrowserLastAdded;
 import com.archos.mediacenter.video.browser.BrowserByIndexedVideos.BrowserLastPlayed;
 import com.archos.mediacenter.video.browser.BrowserByIndexedVideos.BrowserMoviesByGenre2;
@@ -79,6 +80,7 @@ public class BrowserCategoryVideo extends BrowserCategory implements androidx.ap
     private static final int ITEM_ID_MOVIES = ITEM_ID_OFFSET + 1;
     private static final int ITEM_ID_TV_SHOWS = ITEM_ID_OFFSET + 2;
     private static final int ITEM_ID_ALL_VIDEOS = ITEM_ID_OFFSET + 3;
+    public static final int ITEM_ID_CONTINUE_WATCHING = ITEM_ID_OFFSET + 9;
     public static final int ITEM_ID_RECENTLY_ADDED = ITEM_ID_OFFSET + 4;
     private static final int ITEM_ID_RECENTLY_PLAYED = ITEM_ID_OFFSET +5;
     private static final int ITEM_ID_NON_SCRAPED= ITEM_ID_OFFSET +6;
@@ -190,6 +192,12 @@ public class BrowserCategoryVideo extends BrowserCategory implements androidx.ap
         itemData.icon = R.drawable.category_video_all;
         itemData.text = R.string.all_videos;
         itemData.id = ITEM_ID_ALL_VIDEOS;
+        categoryList.add(itemData);
+
+        itemData = new ItemData();
+        itemData.icon = R.drawable.category_video_played;
+        itemData.text = R.string.continue_watching;
+        itemData.id = ITEM_ID_CONTINUE_WATCHING;
         categoryList.add(itemData);
 
         itemData = new ItemData();
@@ -319,6 +327,10 @@ public class BrowserCategoryVideo extends BrowserCategory implements androidx.ap
                 fragmentClass = UpnpRootFragment.class;
                 struc.title = R.string.network_media_servers;
                 break;
+            case ITEM_ID_CONTINUE_WATCHING:
+                fragmentClass = BrowserContinueWatching.class;
+                struc.title = R.string.continue_watching;
+                break;
             case ITEM_ID_RECENTLY_ADDED:
                 fragmentClass = BrowserLastAdded.class;
                 struc.title = LoaderUtils.isSmartRecentlyRows() ? R.string.new_and_unwatched_videos : R.string.recently_added_videos;
@@ -366,6 +378,13 @@ public class BrowserCategoryVideo extends BrowserCategory implements androidx.ap
             Log.w(TAG, "onNavigationItemSelected: caught exception", e);
         }
         return struc;
+    }
+
+    public void goToContinueWatching() {
+        if(mSelectedItemId != ITEM_ID_CONTINUE_WATCHING) {
+            mSelectedItemId = ITEM_ID_CONTINUE_WATCHING;
+            setFragment(null);
+        }
     }
 
     public void goToRecentlyAdded() {

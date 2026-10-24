@@ -170,6 +170,7 @@ public class VideoPreferencesCommon implements OnSharedPreferenceChangeListener 
 
     public static final String KEY_SEPARATE_ANIME_MOVIE_SHOW = "separate_anime_movie_show";
     public static final String KEY_SHOW_WATCHING_UP_NEXT_ROW = "show_watching_up_next_row";
+    public static final String KEY_SHOW_CONTINUE_WATCHING_ROW = "show_continue_watching_row";
     public static final String KEY_SHOW_LAST_ADDED_ROW = "show_last_added_row";
     public static final String KEY_SHOW_LAST_PLAYED_ROW = "show_last_played_row";
     public static final String KEY_SHOW_ALL_MOVIES_ROW = "show_all_movies_row";
@@ -224,6 +225,7 @@ public class VideoPreferencesCommon implements OnSharedPreferenceChangeListener 
     public static final boolean SEPARATE_ANIME_MOVIE_SHOW_DEFAULT = true;
     // TODO: disabled until issue #186 is fixed
     public static final boolean SHOW_WATCHING_UP_NEXT_ROW_DEFAULT = true;
+    public static final boolean SHOW_CONTINUE_WATCHING_ROW_DEFAULT = true;
     public static final boolean SHOW_LAST_ADDED_ROW_DEFAULT = true;
     public static final boolean SHOW_LAST_PLAYED_ROW_DEFAULT = true;
     public static final boolean SHOW_ALL_MOVIES_ROW_DEFAULT = false;

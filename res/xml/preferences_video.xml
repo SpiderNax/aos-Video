@@ -320,6 +320,13 @@
         
         <CheckBoxPreference
             android:defaultValue="true"
+            android:key="show_continue_watching_row"
+            android:summary="@string/preferences_show_continue_watching_row_summary"
+            android:title="@string/preferences_show_continue_watching_row"
+            app:iconSpaceReserved="false"/>
+
+        <CheckBoxPreference
+            android:defaultValue="true"
             android:key="show_last_added_row"
             android:summary="@string/preferences_show_last_added_row_summary"
             android:title="@string/preferences_show_last_added_row"

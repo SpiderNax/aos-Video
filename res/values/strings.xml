@@ -62,6 +62,9 @@
     <string name="info_menu_series_poster_select">Select another poster</string>
 
     <!-- COVER ROLL -->
+    <string name="continue_watching">Continue watching</string>
+    <string name="continue_watching_videos">Continue watching</string>
+    <string name="you_have_no_continue_watching_video">No videos in progress</string>
     <string name="watching_up_next">Watching/Up next</string>
     <string name="recently_added">Recently added</string>
     <string name="recently_added_videos">Recently added</string>
@@ -771,6 +774,8 @@
     <string name="preferences_separate_animation_from_movies">Separate animations from movies and TV shows</string>
     <string name="preferences_show_watching_up_next_row_summary">Check to show a row with your currently watching and up next videos</string>
     <string name="preferences_show_watching_up_next_row">Show watching/up next row</string>
+    <string name="preferences_show_continue_watching_row_summary">Check to show a row with your in-progress media</string>
+    <string name="preferences_show_continue_watching_row">Show continue watching row</string>
     <string name="preferences_show_last_added_row_summary">Check to show a row with your last added media</string>
     <string name="preferences_show_last_added_row">Show last added row</string>
     <string name="preferences_show_last_played_row_summary">Check to show a row with your last played media</string>
